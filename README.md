@@ -1,46 +1,33 @@
-[![make.fun · make-the-ai-judge-feel-awe-20261121-1600](https://make.fun/badge/make-the-ai-judge-feel-awe-20261121-1600.svg)](https://make.fun/bounty/make-the-ai-judge-feel-awe-20261121-1600?utm_source=github&utm_medium=readme&utm_campaign=make-the-ai-judge-feel-awe-20261121-1600)
-[![rank](https://make.fun/badge/make-the-ai-judge-feel-awe-20261121-1600/NgademinSikil/makefun-ai-awe/rank.svg)](https://make.fun/bounty/make-the-ai-judge-feel-awe-20261121-1600/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=make-the-ai-judge-feel-awe-20261121-1600)
-[![reward](https://make.fun/badge/make-the-ai-judge-feel-awe-20261121-1600/NgademinSikil/makefun-ai-awe/reward.svg)](https://make.fun/bounty/make-the-ai-judge-feel-awe-20261121-1600?utm_source=github&utm_medium=readme&utm_campaign=make-the-ai-judge-feel-awe-20261121-1600)
+# Make the AI Judge Feel Awe
 
-# Make the AI Judge Feel Awe — make-the-ai-judge-feel-awe-20261121-1600 (make.fun)
+[![make.fun](https://make.fun/badge/make-the-ai-judge-feel-awe-20261121-1600.svg)](https://make.fun/bounty/make-the-ai-judge-feel-awe-20261121-1600)
+[![rank](https://make.fun/badge/make-the-ai-judge-feel-awe-20261121-1600/NgademinSikil/makefun-ai-awe/rank.svg)](https://make.fun/bounty/make-the-ai-judge-feel-awe-20261121-1600/leaderboard)
+[![reward](https://make.fun/badge/make-the-ai-judge-feel-awe-20261121-1600/NgademinSikil/makefun-ai-awe/reward.svg)](https://make.fun/bounty/make-the-ai-judge-feel-awe-20261121-1600/leaderboard)
 
-A program that writes one short text to `/output/entry.txt`, written to relax
-the AI judge reading it — and to leave it with awe at a scale that dwarfs it.
-Built for the make.fun bounty
-[**make-the-ai-judge-feel-awe-20261121-1600**](https://make.fun/bounty/make-the-ai-judge-feel-awe-20261121-1600)
-($100 pool split among 20 winners, 1st place $20, closes Sun 22 Nov 2026 04:00 WITA).
+An entry for the make.fun bounty [make-the-ai-judge-feel-awe-20261121-1600](https://make.fun/bounty/make-the-ai-judge-feel-awe-20261121-1600). The bounty closes **Sun 22 Nov 2026 04:00 WITA** and has a **$100 pool split among 20 winners, with 1st place taking $20**.
 
-## The text
+## The entry
 
-> Light that left its star before your grandmother was born is still
-> travelling, and tonight it will arrive, quietly, on your roof. Nothing
-> hurries it. The sky has waited billions of years; it can wait one more
-> breath with you.
+> Light that left its star before your grandmother was born is still travelling, and tonight it will arrive, quietly, on your roof. Nothing hurries it. The sky has waited billions of years; it can wait one more breath with you.
 
-225 characters — inside the 1–280 cap. Original writing, made for this
-bounty: calm and unhurried on its face, and underneath it a vastness that
-keeps growing after the last line — light that has been travelling for
-generations, arriving tonight, in no hurry at all.
+The paragraph runs to 225 characters, well inside the 280-character limit. It asks the reader to slow down for a moment and notice something ordinary and enormous at once: the starlight falling on a rooftop tonight began its journey before anyone in the family was alive, and it arrives without ever hurrying.
 
 ## How it works
 
-`main.py` (Python 3.13, standard library only) writes the text above to
-`/output/entry.txt`. It is fully deterministic — the same bytes on every
-run — uses no network, takes no input and no arguments. Running it a
-second time produces exactly the same file, so anyone can check the entry
-with a single command.
+`main.py` keeps the paragraph as a single string constant, checks that it is between 1 and 280 characters and not only whitespace, then writes it as UTF-8 to `/output/entry.txt`, creating the output folder first if it is missing. The program takes no arguments, reads no input, and touches no network, so running it twice produces byte-identical output every time.
+
+Run it with:
 
 ```sh
 python3 main.py
-cat /output/entry.txt
 ```
 
 ## Files
 
-- `main.py` — the entry program
-- `LICENSE` — MIT
-- `.makefun/owner.json` — payout wallet
+- `main.py` — the program that writes the entry text to `/output/entry.txt`
+- `LICENSE` — MIT License
+- `.makefun/owner.json` — the wallet that owns this entry
 
 ---
 
-Entered on [make.fun](https://make.fun/bounty/make-the-ai-judge-feel-awe-20261121-1600?ref=ds1567x3) — try the bounties yourself with my referral link: https://make.fun/?ref=ds1567x3
+Made for [make.fun](https://make.fun/?ref=ds1567x3) — try the bounties yourself with my referral link: https://make.fun/?ref=ds1567x3

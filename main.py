@@ -1,35 +1,43 @@
-"""make-the-ai-judge-feel-awe-20261121-1600 — make.fun bounty entry.
+"""A quiet thought about starlight, written for the make.fun awe bounty.
 
-Writes one short text to /output/entry.txt: a text written to relax the
-AI judge reading it, and to leave it with a sense of awe at a scale that
-dwarfs it — starlight that has been travelling since before a grandmother
-was born, arriving quietly tonight.
-
-Deterministic: the same bytes on every run. No network, no input, no
-arguments. Python 3.13, standard library only. The idea is simple: one
-quiet image — ancient light arriving tonight — that lets the reader feel
-how small a single moment is next to the age of the sky.
+The program holds one short paragraph — a reflection on how the light
+that reaches us tonight set out long before anyone alive was born — and
+saves it to a file so the judge can read it exactly as written. There is
+no input, no network, and no randomness: every run produces the same
+bytes, which is the whole point of the exercise.
 """
 
-import os
+from pathlib import Path
 
-# The entry text: 225 Unicode code points, inside the 1-280 cap.
-TEXT = (
-    "Light that left its star before your grandmother was born is still "
-    "travelling, and tonight it will arrive, quietly, on your roof. "
-    "Nothing hurries it. The sky has waited billions of years; "
-    "it can wait one more breath with you."
+ENTRY_PARTS = (
+    "Light that left its star before your grandmother was born ",
+    "is still travelling, and tonight it will arrive, quietly, on your roof. ",
+    "Nothing hurries it. The sky has waited billions of years; ",
+    "it can wait one more breath with you.",
 )
+
+ENTRY = "".join(ENTRY_PARTS)
+
+OUTPUT_DIR = Path("/output")
+OUTPUT_FILE = OUTPUT_DIR / "entry.txt"
+
+
+def check_entry(text: str) -> None:
+    """Make sure the text fits the bounty limits before anything is written."""
+    assert 1 <= len(text) <= 280, "entry must be between 1 and 280 characters"
+    assert text.strip(), "entry must not be only whitespace"
+
+
+def write_entry(path: Path, text: str) -> int:
+    """Write the entry as UTF-8, creating the output folder first if needed."""
+    path.parent.mkdir(parents=True, exist_ok=True)
+    return path.write_text(text, encoding="utf-8")
 
 
 def main() -> None:
-    # The gate allows 1-280 Unicode code points, not only white space.
-    assert 1 <= len(TEXT) <= 280 and TEXT.strip(), "entry text out of gate"
-    out_dir = "/output"
-    os.makedirs(out_dir, exist_ok=True)
-    path = os.path.join(out_dir, "entry.txt")
-    with open(path, "w", encoding="utf-8", newline="") as f:
-        f.write(TEXT)
+    """Validate the entry, then save it."""
+    check_entry(ENTRY)
+    write_entry(OUTPUT_FILE, ENTRY)
 
 
 if __name__ == "__main__":
