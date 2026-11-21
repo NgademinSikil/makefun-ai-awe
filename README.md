@@ -26,7 +26,9 @@ generations, arriving tonight, in no hurry at all.
 
 `main.py` (Python 3.13, standard library only) writes the text above to
 `/output/entry.txt`. It is fully deterministic — the same bytes on every
-run — uses no network, takes no input and no arguments.
+run — uses no network, takes no input and no arguments. Running it a
+second time produces exactly the same file, so anyone can check the entry
+with a single command.
 
 ```sh
 python3 main.py
