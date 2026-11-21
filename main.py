@@ -6,7 +6,9 @@ dwarfs it — starlight that has been travelling since before a grandmother
 was born, arriving quietly tonight.
 
 Deterministic: the same bytes on every run. No network, no input, no
-arguments. Python 3.13, standard library only.
+arguments. Python 3.13, standard library only. The idea is simple: one
+quiet image — ancient light arriving tonight — that lets the reader feel
+how small a single moment is next to the age of the sky.
 """
 
 import os
